@@ -1,0 +1,77 @@
+main{
+    width: 40vw;
+    margin: 2rem auto;
+    color: #0D0D0D;
+}
+
+
+
+
+main form{
+    padding: 2rem;
+    box-shadow: #F2F2F2 .195rem .195rem .26rem;
+    background-color: #F2F2F2;
+   
+}
+main form input{
+    width: 100%;
+    padding: 1rem 0;
+    margin-top: .5rem;
+    margin-bottom: 2rem;   
+    padding-left: .5rem 
+}
+
+main form input:invalid{
+    border: 2px solid red;
+  }
+  
+ main form input:valid {
+    border: 1px solid black;
+  }
+main form input:last-child{
+    display: block;
+    background-color: #91AAF2;
+    border: 0;
+    margin: 1rem auto;
+    font-size: 2rem;
+    width: 30%;
+
+
+}
+main form label{
+    color: #0D0D0D;
+}
+
+main form fieldset{
+ 
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+main .alert{
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+}
+main .alert-success{
+    background-color: green;
+
+}
+main .alert-danger{
+    background-color: red;
+
+}
+
+
+main a {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    background: rgb(39, 39, 219);
+    color: #fff;
+
+}
+

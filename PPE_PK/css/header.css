@@ -1,0 +1,32 @@
+header{
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #0D0D0D;
+    background-color: rgba(12, 11, 11, 0.8);
+}
+
+header img{
+    margin: 4rem 0;
+
+}
+
+header h1{
+    border-radius: .5rem;
+    text-align: center;
+    border: solid #222 .1rem;
+    padding: 2rem;
+    background-color: #91AAF2;
+}
+
+
+
+@media screen and (max-width: 65rem) {
+
+   
+    
+}
+ 

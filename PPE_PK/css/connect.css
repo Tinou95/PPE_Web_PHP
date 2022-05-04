@@ -1,0 +1,17 @@
+main section {
+    width: 60vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 6rem auto;
+    background-color: #F2F2F2;
+    color: rgb(9, 134, 9);
+    padding: 2rem;
+    font-size: 3rem;
+    flex-wrap: wrap;
+    text-align: center;
+
+}
+

@@ -1,0 +1,90 @@
+footer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(12, 11, 11, 0.8);
+    color: #f9f9f9;
+    margin-top: 5rem;
+    padding: 3rem 0;
+}
+footer h2, footer p{
+    font-size: 2.6rem;
+}
+footer p{
+    padding-top: 4rem;
+    text-align: center;
+    color: grey;
+}
+footer ul li a{
+    font-size: 2rem;
+}
+
+
+footer img{
+    height: auto;
+    width: auto;
+}
+
+footer ul li{
+    padding: 1rem 0;
+}
+
+footer ul li a i{
+    font-size: 3rem;
+}
+footer ul li a i:nth-child(1){
+    margin-right: 2rem;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-around;
+
+}
+.Menu ul, .Sport ul{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.Menu ul li a, .Sport ul li a{
+    color: #ccc;
+
+}
+
+footer .fa-regular{
+    color: red;
+}
+
+@media  screen and  (max-width: 50rem) {
+    footer{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        text-align: justify;
+    }
+    .footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+  
+    }
+
+    .footer .Sport ul li , .footer .Menu ul li{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+footer img{
+    width: 70%;
+}
+
+    .footer ul li {
+        flex-direction: column;
+    }
+    
+}
