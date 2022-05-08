@@ -10,11 +10,14 @@ header{
 }
 
 header img{
-    margin: 4rem 0;
+    width: 100%;
 
+    max-width: 20rem;
 }
 
-header h1{
+
+
+header h1, header .redirection{
     border-radius: .5rem;
     text-align: center;
     border: solid #222 .1rem;
@@ -24,8 +27,12 @@ header h1{
 
 
 
-@media screen and (max-width: 65rem) {
 
+
+@media screen and (max-width: 65rem) {
+header span{
+    margin:  4rem 0;
+}
    
     
 }
