@@ -17,7 +17,7 @@ header img{
 
 
 
-header h1, .redirection{
+header h1, header .redirection{
     border-radius: .5rem;
     text-align: center;
     border: solid #222 .1rem;
@@ -36,3 +36,4 @@ header span{
    
     
 }
+ 

@@ -26,10 +26,39 @@
         <span class="image_header2 image_sunny"></span>
     </header>
     <main>
+    <?php 
+                if(isset($_GET['login_err']))
+                {
+                    $err = htmlspecialchars($_GET['login_err']);
 
-<php
-    require_once('connect_traitement_php/erreur_login.php');
-?>
+                    switch($err)
+                    {
+                        case 'password':
+                        ?>
+                            <p class="alert alert-danger">
+                                <strong>Erreur</strong> mot de passe incorrect
+                        </p>
+                        <?php
+                        break;
+
+                        case 'email':
+                        ?>
+                            <p class="alert alert-danger">
+                                <strong>Erreur</strong> email incorrect
+                        </p>
+                        <?php
+                        break;
+
+                        case 'already':
+                        ?>
+                            <p class="alert alert-danger">
+                                <strong>Erreur</strong> compte non existant
+                        </p>
+                        <?php
+                        break;
+                    }
+                }
+                ?> 
 
            
            <form action="connexion.php" method="post">
