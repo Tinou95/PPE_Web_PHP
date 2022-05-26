@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    require_once 'connect.php'; // ajout connexion bdd 
+    require_once './setup/connect.php'; // ajout connexion bdd 
    // si la session existe pas soit si l'on est pas connecté on redirige
    if(!isset($_SESSION['user'])){
     header('Location:page_nm2.php');
@@ -40,7 +40,7 @@
     <main>
     
         <section>
-            <h2>Bonjour <?php echo $data['pseudo']; ?></h2>
+            <h2>Bonjour <span class="pseudo"><?php echo $data['pseudo']; ?> </span> !</h2>
             <h2 class="first_hache">Sport à la une</h2>
 
             <ul>
@@ -51,31 +51,9 @@
 
             </ul>
         </section>
-
-        <form action="connect.php" method="post" >
-            <fieldset>
-                <p class="warning">Remplir le formulaire ci dessous</p>
-                <label for="last_name">Nom</label><input type="text" name="last_name" placeholder="Last Name" id="last_name" autofocus required><br>
-                <label for="first_name">Prenom</label><input type="text" name="first_name" placeholder="First Name" id="first_name" required><br>
-                <label for="mail">Votre e-mail</label><input type="email" name="mail" placeholder="Votre mail" id="mail" required><br>
-                <label for="age">Votre âge</label><input type="number" name="age" placeholder="Votre age" id="age" required><br>
-
-                <label for="ville_select">Ville</label> <br>
-                <select name="ville" id="ville_select">
-                    <option value="">Ville</option>
-                    <option value="Londres">Londres</option>
-                    <option value="Rome">Rome</option>
-                    <option value="Paris">Paris</option>
-                    <option value="Madrid">Madrid</option>
-                    <option value="Lisbonne">Lisbonne</option>
-                    <option value="Berlin">Berlin</option>
-                </select> <br>
-
-                <input id="submit" type="submit" aria-label="Valider" value="Valider">
-            </fieldset>
-        </form>
+>
         <section>
-        <a href="deconnexion.php"><h2>Deconnexion</h2></a>
+        <a href="./setup/deconnexion.php"><h2>Deconnexion</h2></a>
          </section>
     </main>
 

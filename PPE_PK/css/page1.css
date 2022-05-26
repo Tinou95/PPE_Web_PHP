@@ -105,6 +105,10 @@ section ul figure:hover figcaption{
 	vertical-align: -.4rem;
 }
 
+.pseudo{
+    color: red;
+}
+
 
 /* MAIN */
 

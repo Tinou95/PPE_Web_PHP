@@ -37,7 +37,7 @@ open_modal = function () {
     document.querySelector(".modale img").setAttribute("src", image);
     document.querySelector(".modale .desc h3").innerText = title;
     document.querySelector(".modale .desc p").innerHTML = `<strong>Déscription : </strong>${desc}`;
-    document.querySelector(".modale .desc time").innerText = `Annee ${dates}`;
+    document.querySelector(".modale .desc time").innerText = `Année : ${dates}`;
     document.querySelector(".modale .desc time").setAttribute("datetime", dates);
 };
 for (rows of el) {

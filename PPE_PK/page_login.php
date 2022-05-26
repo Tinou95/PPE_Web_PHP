@@ -20,14 +20,14 @@
     <div class="loader" id="loader" role="region" aria-label="chargement">
         <img src="asset/spinner-icon-gif-29.gif" alt="spinner">
     </div>
-    <?php require_once './header_footer/header_page_nm.php'; ?>
+    <?php require_once './header_footer/header_page_m.php'; ?>
     <main>
 
 
     <?php require_once './error_alert/log_error.php'; ?>
 
            
-           <form action="connexion.php" method="post">
+           <form action="./setup/connexion.php" method="post">
                <fieldset>
                <h2 >Connexion</h2>     
                <label for="mail">Votre e-mail</label><input type="email" name="email" placeholder="Votre mail" id="mail" required><br>

@@ -26,7 +26,7 @@
         <?php require_once './error_alert/reg_error.php'; ?>
 
            
-           <form action="inscription_traitement.php" method="post">
+           <form action="./setup/inscription_traitement.php" method="post">
                
                <fieldset>
                <h2 >Inscription</h2>

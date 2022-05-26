@@ -1,70 +1,46 @@
--- phpMyAdmin SQL Dump
--- version 5.1.1
--- https://www.phpmyadmin.net/
---
--- Hôte : 127.0.0.1
--- Généré le : lun. 07 fév. 2022 à 00:49
--- Version du serveur : 10.4.21-MariaDB
--- Version de PHP : 8.0.11
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Base de données : `ppe_streaming`
---
-
--- --------------------------------------------------------
-
---
--- Structure de la table `registration`
---
-
-CREATE TABLE `registration` (
-  `ID` int(11) NOT NULL,
-  `first_name` varchar(50) NOT NULL,
-  `last_name` varchar(50) NOT NULL,
-  `mail` varchar(50) NOT NULL,
-  `ville` varchar(50) NOT NULL,
-  `age` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Déchargement des données de la table `registration`
---
-
-INSERT INTO `registration` (`ID`, `first_name`, `last_name`, `mail`, `ville`, `age`) VALUES
-(1, 'Quentin', 'Andrieu', 'quentinandrieu@yahoo.com', 'Paris', '15'),
-(2, 'Mark', 'Zukenberg', 'marc@gmail.com', 'Londres', '18');
-
---
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `registration`
---
-ALTER TABLE `registration`
-  ADD PRIMARY KEY (`ID`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `registration`
---
-ALTER TABLE `registration`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+DROP TABLE IF EXISTS `utilisateurs`;
+CREATE TABLE IF NOT EXISTS `utilisateurs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pseudo` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` text NOT NULL,
+  `ip` varchar(20) NOT NULL,
+  `token` text NOT NULL,
+  `date_inscription` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+DROP TABLE IF EXISTS `evenement`;
+CREATE TABLE IF NOT EXISTS `evenement` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(48) NOT NULL,
+  `desc` varchar(256) NOT NULL,
+  `date_creation` datetime NOT NULL,
+  `date_modification` datetime NOT NULL,
+  `image` varchar(48) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `evenement`
+--
+
+INSERT INTO `evenement` (`id`, `nom`, `desc`, `date_creation`, `date_modification`, `image`) VALUES
+(1, 'Football américain', 'Le football américain est un sport collectif opposant deux équipes de onze joueurs qui alternent entre la défense et l\'attaque', '2022-05-26 23:22:47', '2022-05-26 23:22:47', './asset/affiche/affiche_1.jpg'),
+(2, 'Football', 'Le football est un sport collectif qui se joue avec un ballon sphérique entre deux équipes de onze joueurs', '2022-05-26 23:23:12', '2022-05-26 23:23:12', './asset/affiche/affiche_2.jpg'),
+(3, 'Hockey sur glace', 'Le hockey sur glace, est un sport d’équipe se jouant sur une patinoire spécialement aménagée.', '2022-05-26 23:23:22', '2022-05-26 23:23:22', './asset/affiche/affiche_3.jpg'),
+(4, 'Vélo tout-terrain', 'Le vélo tout-terrain, est un vélo destiné à une utilisation sur terrain accidenté, hors des routes goudronnées.', '2022-05-26 23:23:30', '2022-05-26 23:23:30', './asset/affiche/affiche_4.jpg'),
+(5, 'Le cyclisme', 'Le cyclisme sur route est un sport, une des disciplines du cyclisme. Il est disputé au niveau amateur mais aussi professionnel dans de nombreux pays', '2022-05-26 23:23:41', '2022-05-26 23:23:41', './asset/affiche/affiche_5.jpg'),
+(6, 'Le bobsleigh', 'Le bobsleigh est un sport d\'hiver dans lequel des équipes de deux ou quatre bobeurs, effectuent des courses chronométrées.', '2022-05-26 23:23:49', '2022-05-26 23:23:49', './asset/affiche/affiche_6.jpg'),
+(7, 'Boxe', 'La boxe est un sport de combat à un contre un, qui recourt à des frappes de percussion à l\'aide de gants matelassés.', '2022-05-26 23:23:56', '2022-05-26 23:23:56', './asset/affiche/affiche_7.jpg'),
+(8, 'Patinage de vitesse', 'Le patinage de vitesse est un sport de glisse sur glace. Il naît aux Pays-Bas au XIII? siècle et devient olympique en 1924.', '2022-05-26 23:24:05', '2022-05-26 23:24:05', './asset/affiche/affiche_8.jpg'),
+(9, 'Surf', 'Le surf est une pratique physique individuelle de glisse sur les vagues, au bord de l\'océan.', '2022-05-26 23:24:14', '2022-05-26 23:24:14', './asset/affiche/affiche_9.jpg'),
+(10, 'Skate', 'La pratique du street en skateboard consiste principalement à réaliser des sauts et des figures (tricks) sur des mobiliers et éléments urbains.', '2022-05-26 23:24:21', '2022-05-26 23:24:21', './asset/affiche/affiche_10.jpg'),
+(11, 'Formule 1', 'La Formule 1, communément abrégée en F1, est une discipline de sport automobile considérée comme la catégorie reine de ce sport.', '2022-05-26 23:24:29', '2022-05-26 23:24:29', './asset/affiche/affiche_11.webp'),
+(12, 'Moto', 'Les Championnats du monde de vitesse moto regroupent les courses de vitesse motocycliste sur circuit, sous l\'égide de la Fédération de motocyclisme', '2022-05-26 23:24:36', '2022-05-26 23:24:36', './asset/affiche/affiche_12.webp'),
+(13, 'Ski alpin', 'Le ski alpin est un ensemble de disciplines du ski qui se pratiquent dans un contexte de loisirs ou de compétition.', '2022-05-26 23:24:44', '2022-05-26 23:24:44', './asset/affiche/affiche_13.jpg'),
+(14, 'Athlétisme', 'L’athlétisme est un ensemble d’épreuves sportives codifiées comprenant les courses, sauts, lancers, épreuves combinées et marche.', '2022-05-26 23:24:52', '2022-05-26 23:24:52', './asset/affiche/affiche_14.jpg'),
+(15, 'Tennis', 'Le tennis est un sport de raquette qui oppose soit deux joueurs soit quatre joueurs qui forment deux équipes de deux.', '2022-05-26 23:24:59', '2022-05-26 23:24:59', './asset/affiche/affiche_15.jpg');
+
