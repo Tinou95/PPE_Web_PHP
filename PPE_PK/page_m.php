@@ -2,7 +2,10 @@
     session_start();
     require_once 'connect.php'; // ajout connexion bdd 
    // si la session existe pas soit si l'on est pas connecté on redirige
-  
+   if(!isset($_SESSION['user'])){
+    header('Location:page_nm.php');
+    die();
+}
 
     // On récupere les données de l'utilisateur
     $req = $bdd->prepare('SELECT * FROM utilisateurs WHERE token = ?');
@@ -36,11 +39,8 @@
     <div role="region" aria-label="chargement" class="loader" id="loader">
         <img src="asset/spinner-icon-gif-29.gif" alt="">
     </div>
-    <header>
-        <img class="image_header" src="./asset/logo_sport.png" alt="sport_plus">
-        <h1>Maison des ligues tous les sports  </h1>
-        <span class="image_header2 image_sunny"></span>
-    </header>
+    
+    <?php require_once './header_footer/header_page_m.php'; ?>
     <main>
 
 
@@ -342,33 +342,7 @@
 
     </main>
 
-    <footer id="contact">
-
-        <section class="footer">
-            <img src="./asset/logo_sport.png" alt="logo redbull">
-            <div role="region" aria-labelledby="contact" class="Sport">
-                <h2>Sport</h2>
-                <ul>
-                    <li> <a href="#">Tennis </a></li>
-                    <li> <a href="#"> Hockey sur glace</a></li>
-                    <li> <a href="#"> Football </a></li>
-                    <li> <a href="#"> Moto GP </a></li>
-                    <li> <a href="#"> Athlétisme </a></li>
-                </ul>
-
-            </div>
-            <div role="region" aria-labelledby="menu" class="Menu">
-                <h2> Menu</h2>
-                <ul>
-                    <li><a href="#accueil" class="footer-links">Accueil</a></li>
-                    <li><a href="#a_propos" class="footer-links">A propos</a></li>
-                    <li><a href="#contact" class="footer-links">Contact</a></li>
-                </ul>
-            </div>
-
-        </section>
-        <p>&copy;- Sport+ -2022</p>
-    </footer>
+    <?php require_once './header_footer/footer.php'; ?>
 
 
     <script src="https://kit.fontawesome.com/c62d0ae7da.js" crossorigin="anonymous"></script>

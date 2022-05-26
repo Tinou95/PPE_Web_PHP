@@ -20,45 +20,11 @@
     <div class="loader" id="loader" role="region" aria-label="chargement">
         <img src="asset/spinner-icon-gif-29.gif" alt="spinner">
     </div>
-    <header>
-     <a href="page_nm.php">  <img class="image_header" src="./asset/logo_sport.png" alt="sport+"></a> 
-        <h1>Maison des ligues tous les sports</h1>
-        <span class="image_header2 image_sunny"></span>
-    </header>
+    <?php require_once './header_footer/header_page_nm.php'; ?>
     <main>
-    <?php 
-                if(isset($_GET['login_err']))
-                {
-                    $err = htmlspecialchars($_GET['login_err']);
 
-                    switch($err)
-                    {
-                        case 'password':
-                        ?>
-                            <p class="alert alert-danger">
-                                <strong>Erreur</strong> mot de passe incorrect
-                        </p>
-                        <?php
-                        break;
 
-                        case 'email':
-                        ?>
-                            <p class="alert alert-danger">
-                                <strong>Erreur</strong> email incorrect
-                        </p>
-                        <?php
-                        break;
-
-                        case 'already':
-                        ?>
-                            <p class="alert alert-danger">
-                                <strong>Erreur</strong> compte non existant
-                        </p>
-                        <?php
-                        break;
-                    }
-                }
-                ?> 
+    <?php require_once './error_alert/log_error.php'; ?>
 
            
            <form action="connexion.php" method="post">
@@ -80,32 +46,7 @@
 
 
 
-    <footer id="contact">
-
-        <section class="footer">
-            <img src="./asset/logo_sport.png" alt="logo redbull">
-            <div role="region" aria-labelledby="contact" class="Sport">
-                <h2>Sport</h2>
-                <ul>
-                    <li> <a href="">Tennis </a></li>
-                    <li> <a href=""> Hockey sur glace</a></li>
-                    <li> <a href=""> Football </a></li>
-                    <li> <a href=""> Moto GP </a></li>
-                    <li> <a href=""> Athlétisme </a></li>
-                </ul>
-            </div>
-            <div role="region" aria-labelledby="menu" class="Menu">
-                <h2> Menu</h2>
-                <ul>
-                    <li><a href="#accueil" class="footer-links">Accueil</a></li>
-                    <li><a href="#a_propos" class="footer-links">A propos</a></li>
-                    <li><a href="#contact" class="footer-links">Contact</a></li>
-                </ul>
-            </div>
-
-        </section>
-        <p>&copy;- Sport+ -2022</p>
-    </footer>
+    <?php require_once './header_footer/footer.php'; ?>
 
 
     <script src="https://kit.fontawesome.com/c62d0ae7da.js" crossorigin="anonymous"></script>

@@ -21,16 +21,10 @@
     <div class="loader" id="loader" role="region" aria-label="chargement">
         <img src="asset/spinner-icon-gif-29.gif" alt="spinner">
     </div>
-    <header>
-        <a href="page_nm.php"><img class="image_header" src="./asset/logo_sport.png" alt="sport+"></a>
-        <h1>Maison des ligues tous les sports</h1>
-        <a href="./page_login.php" class="redirection">Se connecter</a>
-        <span class="image_header2 image_sunny"></span>
-    </header>
+    <?php require_once './header_footer/header_page_nm.php'; ?>
     <main>
     
         <section>
-            <h2>Bonjour</h2>
             <h2 class="first_hache">Sport à la une</h2>
 
             <ul>
@@ -42,58 +36,28 @@
             </ul>
         </section>
 
-        <form action="connect.php" method="post" >
-            <fieldset>
-                <p class="warning">Remplir le formulaire ci dessous</p>
-                <label for="last_name">Nom</label><input type="text" name="last_name" placeholder="Last Name" id="last_name" autofocus required><br>
-                <label for="first_name">Prenom</label><input type="text" name="first_name" placeholder="First Name" id="first_name" required><br>
-                <label for="mail">Votre e-mail</label><input type="email" name="mail" placeholder="Votre mail" id="mail" required><br>
-                <label for="age">Votre âge</label><input type="number" name="age" placeholder="Votre age" id="age" required><br>
 
-                <label for="ville_select">Ville</label> <br>
-                <select name="ville" id="ville_select">
-                    <option value="">Ville</option>
-                    <option value="Londres">Londres</option>
-                    <option value="Rome">Rome</option>
-                    <option value="Paris">Paris</option>
-                    <option value="Madrid">Madrid</option>
-                    <option value="Lisbonne">Lisbonne</option>
-                    <option value="Berlin">Berlin</option>
-                </select> <br>
+        <?php require_once './error_alert/reg_error.php'; ?>
 
-                <input id="submit" type="submit" aria-label="Valider" value="Valider">
-            </fieldset>
-        </form>
+
+        <form action="inscription_traitement.php" method="post">
+               
+               <fieldset>
+               <h2 >Inscription</h2>
+               
+               <label for="pseudo">Votre pseudo</label><input type="pseudo" name="pseudo" placeholder="Votre pseudo" id="pseudo" required><br>
+               <label for="mail">Votre e-mail</label><input type="email" name="email" placeholder="Votre mail" id="mail" required><br>
+               <label for="password">Votre mot de passe </label><input type="password" name="password" placeholder="Votre mot de passe" id="password" required><br>
+               <label for="password_retype">Votre mot de passe </label><input type="password" name="password_retype" placeholder="Re-tapez Votre mot de passe" id="password" required><br>
+                <input id="submit" type="submit" aria-label="Valider" value="Inscription">
+                </fieldset>
+                
+           </form>
     </main>
 
 
 
-    <footer id="contact">
-
-        <section class="footer">
-            <img src="./asset/logo_sport.png" alt="logo redbull">
-            <div role="region" aria-labelledby="contact" class="Sport">
-                <h2>Sport</h2>
-                <ul>
-                    <li> <a href="">Tennis </a></li>
-                    <li> <a href=""> Hockey sur glace</a></li>
-                    <li> <a href=""> Football </a></li>
-                    <li> <a href=""> Moto GP </a></li>
-                    <li> <a href=""> Athlétisme </a></li>
-                </ul>
-            </div>
-            <div role="region" aria-labelledby="menu" class="Menu">
-                <h2> Menu</h2>
-                <ul>
-                    <li><a href="#accueil" class="footer-links">Accueil</a></li>
-                    <li><a href="#a_propos" class="footer-links">A propos</a></li>
-                    <li><a href="#contact" class="footer-links">Contact</a></li>
-                </ul>
-            </div>
-
-        </section>
-        <p>&copy;- Sport+ -2022</p>
-    </footer>
+    <?php require_once './header_footer/footer.php'; ?>
 
 
     <script src="https://kit.fontawesome.com/c62d0ae7da.js" crossorigin="anonymous"></script>
