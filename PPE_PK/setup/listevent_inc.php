@@ -23,7 +23,7 @@ $recipesStatement->execute(array(
 
 print '<table>' . '<th>' . "Nom de l'événement" . '</th>' . '<th>' . "Description de l'événement" . '</th>' . '<th>' . "Date de l'événement" . '</th>'. '<th>' . "Date de la consultation" . '</th>';
 foreach ($users as $user) {
-    if ($data['id'] === $_SESSION['user']) {
+    if ($user['id_utilisateur'] === $_SESSION['user']) {
         echo
         '</tr>' .
             '<tr>' . '<td>' . $user['nom'] . '</td>' . '<td>' 
@@ -31,6 +31,7 @@ foreach ($users as $user) {
             . $user['date_consultation'] . '</td>' . '<td>' 
             . $user['date_consultation'] . '</td>' ;
             
+
 }
 }
 print '</tr> ' . ' </table>';
