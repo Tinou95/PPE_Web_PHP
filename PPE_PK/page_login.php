@@ -20,7 +20,7 @@
     <div class="loader" id="loader" role="region" aria-label="chargement">
         <img src="asset/spinner-icon-gif-29.gif" alt="spinner">
     </div>
-    <?php require_once './header_footer/header_page_m.php'; ?>
+    <?php include_once './header_footer/header_page_m.php'; ?>
     <main>
 
 
@@ -46,7 +46,7 @@
 
 
 
-    <?php require_once './header_footer/footer.php'; ?>
+    <?php include_once './header_footer/footer.php'; ?>
 
 
     <script src="https://kit.fontawesome.com/c62d0ae7da.js" crossorigin="anonymous"></script>

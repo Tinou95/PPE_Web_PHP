@@ -19,6 +19,14 @@ image_header2.addEventListener("click", () => {
 });
 
 
+
+// participer input
+
+
+
+// Modal
+
+
 let el, modal, closed, open_modal, closed_all;
 
 el = document.querySelectorAll(".grid-picture-large li");
@@ -29,17 +37,30 @@ closed_all = document.querySelector(".modale img");
 
 open_modal = function () {
     console.log(this.dataset);
-    const image = this.dataset.image;
-    const title = this.dataset.title;
-    const desc = this.dataset.description;
-    const dates = this.dataset.dates;
-    modal.classList.add("modale-active");
+    /* les variables */
+    let image = this.dataset.image;
+    let title = this.dataset.title;
+    let desc = this.dataset.description;
+    let dates = this.dataset.dates;
+    let id = this.dataset.id;
+    
+    modal.classList.add("modale-active"); /* ajouter la classe active */
+    /* sélectionner les sélecteurs html*/
     document.querySelector(".modale img").setAttribute("src", image);
     document.querySelector(".modale .desc h3").innerText = title;
-    document.querySelector(".modale .desc p").innerHTML = `<strong>Déscription : </strong>${desc}`;
+    document.querySelector(".modale .desc p").innerHTML = `<strong>Description : </strong>${desc}`;
     document.querySelector(".modale .desc time").innerText = `Année : ${dates}`;
     document.querySelector(".modale .desc time").setAttribute("datetime", dates);
+
+    let btn = document.querySelector("main .grid-picture-large");
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        let stateObj = { id: "100" };
+        window.history.pushState(stateObj, "PPE_WEB", "/PPE_PK/page_m.php?id_evenement=" + id);
+    });
+
 };
+
 for (rows of el) {
     rows.addEventListener("click", open_modal);
 }

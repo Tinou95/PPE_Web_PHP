@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
 
     <title>Sport+</title>
 </head>
@@ -25,7 +26,7 @@
      <div role="region" aria-label="chargement" class="loader" id="loader">
         <img src="asset/spinner-icon-gif-29.gif" alt="">
     </div>
-    <?php require_once './header_footer/header_page_nm.php'; ?>
+    <?php include_once './header_footer/header_page_nm.php'; ?>
     <main>
 
 
@@ -84,6 +85,8 @@
                 <figcaption class="desc">
                     <h3>title</h3>
                     <p> </p>
+                    <time></time> <br>
+                    <input type="submit" value="Participer">
                 </figcaption>
             
             </figure>
@@ -95,10 +98,11 @@
 
     </main>
 
-    <?php require_once './header_footer/footer.php'; ?>
+    <?php include_once './header_footer/footer.php'; ?>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
     <script src="https://kit.fontawesome.com/c62d0ae7da.js" crossorigin="anonymous"></script>
+    <script src="./js/notyf/notyf_nm.js"></script>
     <script src="./js/page1.js"></script>
     <script src="./js/themesombre.js"></script>
     <script src="./js/loader.js"></script>
