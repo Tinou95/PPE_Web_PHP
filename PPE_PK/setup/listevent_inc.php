@@ -2,7 +2,7 @@
 
 try {
     $sqlQuery = 'SELECT DISTINCT evenement.nom, evenement.desc, date_consultation, id_utilisateur FROM historique_client
-                INNER JOIN evenement ON historique_client.id_utilisateur = evenement.id
+                INNER JOIN evenement ON historique_client.id_evenement = evenement.id
                 WHERE historique_client.id_utilisateur = :id_utilisateur
                 GROUP BY historique_client.id_evenement, historique_client.date_consultation, evenement.nom, evenement.desc
                 ORDER BY historique_client.date_consultation DESC LIMIT 10';
@@ -21,7 +21,9 @@ $recipesStatement->execute(array(
 
 
 
-print '<table>' . '<th>' . "Nom de l'événement" . '</th>' . '<th>' . "Description de l'événement" . '</th>' . '<th>' . "Date de l'événement" . '</th>'. '<th>' . "Date de la consultation" . '</th>';
+
+
+print '<table class="monTableau">' . '<th>' . "Nom de l'événement" . '</th>' . '<th>' . "Description de l'événement" . '</th>' . '<th>' . "Date de l'événement" . '</th>'. '<th>' . "Date de la consultation" . '</th>';
 foreach ($users as $user) {
     if ($user['id_utilisateur'] === $_SESSION['user']) {
         echo

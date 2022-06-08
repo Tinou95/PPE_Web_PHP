@@ -41,9 +41,7 @@
         <img src="asset/spinner-icon-gif-29.gif" alt="">
     </div> -->
     
-    <?php include_once './header_footer/header_page_m.php'; 
-    
-    print($data['id']) ;
+    <?php include_once './header_footer/header_page_profil.php'; 
 
     ?>
     <main>
@@ -90,18 +88,20 @@
 
         </section>
 
+
+        <!-- <section class="userInfo">
+            <h2>Information</h2>
+            <?php include_once "./setup/utilisateur_inc.php" ?>
+            <a href="#">Voir l'historique des évenements</a>    -->
+            <?php include_once "./setup/listevent_inc.php" ?>    
+            
+        </section> 
+
+
         <section>
             <a href="./setup/deconnexion.php"><h2>Deconnexion</h2></a>
         </section>
 
-
-        <section class="userInfo">
-            <h2>Information</h2>
-            <?php include_once "./setup/utilisateur_inc.php" ?>
-            <a href="#">Voir l'historique des évenements</a>    
-            <?php include_once "./setup/listevent_inc.php" ?>    
-            
-        </section>
 
 
 

@@ -25,7 +25,7 @@
                     if(filter_var($email, FILTER_VALIDATE_EMAIL)){ // Si l'email est de la bonne forme
                         if($password === $password_retype){ // si les deux mdp saisis sont bon
 
-                            // On hash le mot de passe avec Bcrypt, via un coût de 12
+                            // On hash le mot de passe avec Bcrypt
                             $cost = ['cost' => 12];
                             $password = password_hash($password, PASSWORD_BCRYPT, $cost);
 

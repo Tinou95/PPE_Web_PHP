@@ -57,8 +57,8 @@ open_modal = function () {
         e.preventDefault();
         let stateObj = { id: "100" };
         window.history.pushState(stateObj, "PPE_WEB", "/PPE_PK/page_m.php?id_evenement=" + id);
+        //window.history.pushState(stateObj, "PPE_WEB", "/PPE_streaming/PPE_PK/page_m.php?id_evenement=" + id);
     });
-
 };
 
 for (rows of el) {
